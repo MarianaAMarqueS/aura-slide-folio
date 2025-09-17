@@ -5,31 +5,41 @@ import IndustrialHeroImage from "@/components/IndustrialHeroImage";
 import ProjectsSection from "@/components/ProjectsSection";
 import FooterSection from "@/components/FooterSection";
 import StatsSection from "@/components/StatsSection";
+import Header from "@/components/Header";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      {/* Hero Section with 3D Room and Logo */}
-      <HeroSection />
-      
-      {/* About Section - A Consteel */}
-      <AboutSection />
-      
-      {/* Services and Industries Grid */}
-      <ServicesSection />
-      
-      {/* Full Width Industrial Image */}
-      <IndustrialHeroImage />
-      
-      {/* Projects Horizontal Scroll */}
-      <ProjectsSection />
-      
-      {/* Statistics Section */}
-      <StatsSection />
-      
-      {/* Final Golden Footer */}
-      <FooterSection />
-    </main>
+    <>
+      <Header />
+      <main className="min-h-screen pt-20">
+        {/* Hero Section with 3D Room and Logo */}
+        <HeroSection />
+        
+        {/* About Section - A Consteel */}
+        <section id="about">
+          <AboutSection />
+        </section>
+        
+        {/* Services and Industries Grid */}
+        <section id="services">
+          <ServicesSection />
+        </section>
+        
+        {/* Full Width Industrial Image */}
+        <IndustrialHeroImage />
+        
+        {/* Projects Horizontal Scroll */}
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+        
+        {/* Statistics Section */}
+        <StatsSection />
+        
+        {/* Final Golden Footer */}
+        <FooterSection />
+      </main>
+    </>
   );
 };
 
