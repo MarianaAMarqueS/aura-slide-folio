@@ -47,6 +47,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Consteel Custom Colors
+        'consteel-dark': "hsl(var(--consteel-dark))",
+        'consteel-darker': "hsl(var(--consteel-darker))",
+        'consteel-gray': "hsl(var(--consteel-gray))",
+        'consteel-light-gray': "hsl(var(--consteel-light-gray))",
+        'consteel-gold': "hsl(var(--consteel-gold))",
+        'consteel-gold-glow': "hsl(var(--consteel-gold-glow))",
+        'hero-bg': "hsl(var(--hero-bg))",
+        'hero-accent': "hsl(var(--hero-accent))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
