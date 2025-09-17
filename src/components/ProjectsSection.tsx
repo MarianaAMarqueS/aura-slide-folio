@@ -1,60 +1,61 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Calendar, MapPin, Users } from "lucide-react";
 
 const projects = [
   {
-    id: 1,
-    title: "Torre Industrial Porto",
-    category: "Estruturas Metálicas",
-    year: "2024",
-    location: "Porto, Portugal", 
+    id: "wind-energy",
+    title: "Wind Energy",
+    category: "Energy",
+    year: "2019/2020",
+    location: "Spain, Portugal", 
     team: "15 Especialistas",
-    image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&h=300&fit=crop"
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=300&fit=crop"
   },
   {
-    id: 2,
-    title: "Ponte Rodoviária Aveiro",
-    category: "Infraestrutura",
-    year: "2023",
-    location: "Aveiro, Portugal",
-    team: "22 Especialistas",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Complexo Industrial Braga",
-    category: "Construção Industrial",
-    year: "2023",
-    location: "Braga, Portugal",
-    team: "18 Especialistas", 
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop"
-  },
-  {
-    id: 4,
-    title: "Edifício Corporativo Lisboa",
-    category: "Arquitetura Moderna",
-    year: "2024",
-    location: "Lisboa, Portugal",
-    team: "12 Especialistas",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
-  },
-  {
-    id: 5,
-    title: "Terminal Portuário Leixões",
-    category: "Infraestrutura Portuária", 
-    year: "2022",
-    location: "Leixões, Portugal",
+    id: "airbus-a380",
+    title: "Airbus A380",
+    category: "Aviation",
+    year: "2017",
+    location: "Spain",
     team: "25 Especialistas",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400&h=300&fit=crop"
   },
   {
-    id: 6,
-    title: "Centro de Distribuição Coimbra",
-    category: "Logística Industrial",
-    year: "2024",
-    location: "Coimbra, Portugal",
-    team: "20 Especialistas",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop"
+    id: "joinery",
+    title: "Joinery",
+    category: "Construction",
+    year: "2019/2020",
+    location: "Portugal, France",
+    team: "18 Especialistas", 
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop"
+  },
+  {
+    id: "hydro-electric",
+    title: "Hydro-Electric",
+    category: "Energy",
+    year: "2018",
+    location: "Spain",
+    team: "12 Especialistas",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop"
+  },
+  {
+    id: "manufacturing-plant",
+    title: "Manufacturing Plant",
+    category: "Manufacturing",
+    year: "2021",
+    location: "Italy",
+    team: "30 Especialistas",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop"
+  },
+  {
+    id: "research-center",
+    title: "Research Center",
+    category: "Technology",
+    year: "2021",
+    location: "Netherlands",
+    team: "22 Especialistas",
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop"
   }
 ];
 
@@ -179,9 +180,12 @@ const ProjectsSection = () => {
 
                 {/* Action Button */}
                 <div className="mt-6 pt-4 border-t border-border">
-                  <button className="text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300">
+                  <Link 
+                    to={`/project/${project.id}`}
+                    className="text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
+                  >
                     Ver Detalhes →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
