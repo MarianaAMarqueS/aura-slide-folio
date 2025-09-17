@@ -127,17 +127,17 @@ All colors MUST be HSL.
   }
 
   .service-card::before {
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300 rounded-xl;
+    @apply absolute inset-2 opacity-0 transition-opacity duration-300 rounded-lg;
     content: '';
     background: var(--gradient-gold);
-    z-index: -1;
-    filter: blur(20px);
-    transform: scale(0.8);
+    z-index: 0;
+    filter: blur(15px);
+    transform: scale(0.9);
   }
 
   .service-card:hover::before {
-    @apply opacity-30;
-    transform: scale(1.1);
+    @apply opacity-25;
+    transform: scale(0.95);
   }
 
   .service-card:hover {
