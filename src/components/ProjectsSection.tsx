@@ -94,7 +94,7 @@ const ProjectsSection = () => {
   return (
     <section 
       id="projects-section"
-      className="bg-consteel-dark py-20 overflow-hidden"
+      className="bg-white py-20 overflow-hidden"
     >
       <div className="container mx-auto px-6">
         {/* Header */}
@@ -102,11 +102,11 @@ const ProjectsSection = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div>
-            <h2 className="text-5xl font-black text-foreground mb-4">
+            <h2 className="text-5xl font-black text-black mb-4">
               Projetos
             </h2>
             <div className="w-16 h-1 bg-consteel-gold mb-6" />
-            <p className="text-xl text-consteel-light-gray max-w-2xl">
+            <p className="text-xl text-gray-600 max-w-2xl">
               Uma seleção dos nossos projetos mais emblemáticos, demonstrando a nossa 
               capacidade de execução em diversos setores da indústria.
             </p>
@@ -159,11 +159,11 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2">
+                <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">
                   {project.title}
                 </h3>
                 
-                <div className="space-y-2 text-sm text-consteel-light-gray">
+                <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     <span>{project.year}</span>
