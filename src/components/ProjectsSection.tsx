@@ -143,7 +143,7 @@ const ProjectsSection = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden project-content">
                 <img 
                   src={project.image}
                   alt={project.title}
@@ -158,7 +158,7 @@ const ProjectsSection = () => {
               </div>
 
               {/* Project Info */}
-              <div className="p-6">
+              <div className="p-6 project-content">
                 <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2">
                   {project.title}
                 </h3>
