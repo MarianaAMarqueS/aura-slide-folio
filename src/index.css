@@ -147,13 +147,13 @@ All colors MUST be HSL.
 
   /* Project Card */
   .project-card {
-    @apply bg-consteel-gold border border-border rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0;
+    @apply bg-consteel-darker border border-border rounded-xl overflow-hidden transition-transform duration-300 flex-shrink-0;
     box-shadow: var(--shadow-card);
     width: 320px;
   }
 
   .project-card:hover {
-    @apply bg-white transform scale-105;
+    @apply transform scale-105;
     box-shadow: var(--shadow-hover);
   }
 
