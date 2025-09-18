@@ -12,32 +12,38 @@ const Index = () => {
     <>
       <Header />
       <main className="min-h-screen pt-20">
-        {/* Hero Section with 3D Room and Logo */}
-        <HeroSection />
+        {/* Gradient Section - Black to White */}
+        <div className="bg-gradient-to-b from-black via-gray-800 to-white">
+          {/* Hero Section with 3D Room and Logo */}
+          <HeroSection />
+          
+          {/* About Section - A Consteel */}
+          <section id="about">
+            <AboutSection />
+          </section>
+          
+          {/* Services and Industries Grid */}
+          <section id="services">
+            <ServicesSection />
+          </section>
+          
+          {/* Full Width Industrial Image */}
+          <IndustrialHeroImage />
+        </div>
         
-        {/* About Section - A Consteel */}
-        <section id="about">
-          <AboutSection />
-        </section>
-        
-        {/* Services and Industries Grid */}
-        <section id="services">
-          <ServicesSection />
-        </section>
-        
-        {/* Full Width Industrial Image */}
-        <IndustrialHeroImage />
-        
-        {/* Projects Horizontal Scroll */}
-        <section id="projects">
-          <ProjectsSection />
-        </section>
-        
-        {/* Statistics Section */}
-        <StatsSection />
-        
-        {/* Final Golden Footer */}
-        <FooterSection />
+        {/* White Section */}
+        <div className="bg-white">
+          {/* Projects Horizontal Scroll */}
+          <section id="projects">
+            <ProjectsSection />
+          </section>
+          
+          {/* Statistics Section */}
+          <StatsSection />
+          
+          {/* Final Golden Footer */}
+          <FooterSection />
+        </div>
       </main>
     </>
   );
