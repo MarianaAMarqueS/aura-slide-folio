@@ -159,11 +159,11 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">
+                <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
                   {project.title}
                 </h3>
                 
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 text-sm text-white">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     <span>{project.year}</span>
@@ -182,7 +182,7 @@ const ProjectsSection = () => {
                 <div className="mt-6 pt-4 border-t border-border">
                   <Link 
                     to={`/project/${project.id}`}
-                    className="text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
+                    className="text-white hover:text-consteel-gold font-semibold text-sm transition-colors duration-300"
                   >
                     Ver Detalhes →
                   </Link>
