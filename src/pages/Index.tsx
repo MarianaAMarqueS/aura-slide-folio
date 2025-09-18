@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-20 bg-gradient-to-b from-black via-gray-900 to-white">
+      <main className="min-h-screen pt-20">
         {/* Hero Section with 3D Room and Logo */}
         <HeroSection />
         
