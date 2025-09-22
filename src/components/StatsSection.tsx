@@ -55,7 +55,7 @@ const StatsSection = () => {
   return (
     <section 
       id="stats-section"
-      className="relative py-20 overflow-hidden"
+      className="relative py-32 overflow-hidden"
       style={{
         backgroundImage: `url(${worldBackground})`,
         backgroundSize: '150%',

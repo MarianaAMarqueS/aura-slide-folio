@@ -22,7 +22,7 @@ const FooterSection = () => {
   return (
     <section 
       id="footer-section"
-      className="relative bg-consteel-gold py-20 overflow-hidden"
+      className="relative bg-consteel-gold py-12 overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
