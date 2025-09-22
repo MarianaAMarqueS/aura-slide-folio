@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import worldBackground from "@/assets/world-background-subtle.jpg";
+import worldBackground from "@/assets/world-hemisphere.jpg";
 
 const stats = [
   { number: "2017", label: "Fundada", suffix: "" },
