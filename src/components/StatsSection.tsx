@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import worldBackground from "@/assets/world-background.jpg";
+import worldBackground from "@/assets/world-background-subtle.jpg";
 
 const stats = [
   { number: "2017", label: "Fundada", suffix: "" },
@@ -63,8 +63,6 @@ const StatsSection = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 container mx-auto px-6">
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16 transition-all duration-800 ${
@@ -78,18 +76,18 @@ const StatsSection = () => {
             >
               <div className="relative">
                 {/* Number */}
-                <div className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-2">
                   {animatedNumbers[index] !== undefined ? (
                     <>
                       {formatNumber(animatedNumbers[index], stat.number)}
-                      <span className="text-2xl md:text-3xl lg:text-4xl text-white">
+                      <span className="text-2xl md:text-3xl lg:text-4xl text-black">
                         {stat.suffix}
                       </span>
                     </>
                   ) : (
                     <>
                       {stat.number}
-                      <span className="text-2xl md:text-3xl lg:text-4xl text-white">
+                      <span className="text-2xl md:text-3xl lg:text-4xl text-black">
                         {stat.suffix}
                       </span>
                     </>
@@ -97,7 +95,7 @@ const StatsSection = () => {
                 </div>
                 
                 {/* Label */}
-                <p className="text-sm md:text-base text-white font-medium leading-tight mt-2">
+                <p className="text-sm md:text-base text-black font-medium leading-tight mt-2">
                   {stat.label}
                 </p>
 
