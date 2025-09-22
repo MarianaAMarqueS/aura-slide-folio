@@ -58,7 +58,7 @@ const StatsSection = () => {
       className="relative py-32 overflow-hidden"
       style={{
         backgroundImage: `url(${worldBackground})`,
-        backgroundSize: '150%',
+        backgroundSize: '200%',
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat'
       }}
