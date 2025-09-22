@@ -59,7 +59,7 @@ const StatsSection = () => {
       style={{
         backgroundImage: `url(${worldBackground})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'bottom center',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat'
       }}
     >
