@@ -3,6 +3,9 @@ import industrialHero from "@/assets/industrial-hero.jpg";
 
 const IndustrialHeroImage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  
+  const words = ["INOVAÇÃO", "SHAPE", "TECNOLOGIA"];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,6 +22,14 @@ const IndustrialHeroImage = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   return (
     <section 
@@ -64,8 +75,8 @@ const IndustrialHeroImage = () => {
         <div className={`text-center transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-6xl md:text-8xl font-black text-foreground mb-6 tracking-tight">
-            INOVAÇÃO
+          <h2 className="text-6xl md:text-8xl font-black text-foreground mb-6 tracking-tight transition-all duration-500">
+            {words[currentWordIndex]}
           </h2>
           <div className="w-32 h-1 bg-consteel-gold mx-auto mb-8" />
           <p className="text-2xl text-consteel-light-gray max-w-2xl mx-auto leading-relaxed">
