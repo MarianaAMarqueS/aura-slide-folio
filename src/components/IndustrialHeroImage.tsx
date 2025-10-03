@@ -34,8 +34,8 @@ const IndustrialHeroImage = () => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
         // Fade in
         setWordOpacity(1);
-      }, 500);
-    }, 3000);
+      }, 300);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [words.length]);
@@ -85,7 +85,7 @@ const IndustrialHeroImage = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 
-            className="text-6xl md:text-8xl font-black text-foreground mb-6 tracking-tight transition-opacity duration-500"
+            className="text-6xl md:text-8xl font-black text-foreground mb-6 tracking-tight transition-opacity duration-300"
             style={{ opacity: wordOpacity }}
           >
             {words[currentWordIndex]}
