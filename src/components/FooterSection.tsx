@@ -22,7 +22,7 @@ const FooterSection = () => {
   return (
     <section 
       id="footer-section"
-      className="relative bg-consteel-gold py-12 overflow-hidden"
+      className="relative bg-white py-12 overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -40,10 +40,10 @@ const FooterSection = () => {
         }`}>
           {/* Large Logo */}
           <div className="flex items-center justify-center gap-8 mb-8">
-            <div className="w-16 h-16 bg-consteel-dark rounded-2xl flex items-center justify-center">
-              <span className="text-consteel-gold text-3xl font-black">C</span>
+            <div className="w-16 h-16 bg-consteel-gold rounded-2xl flex items-center justify-center">
+              <span className="text-consteel-dark text-3xl font-black">C</span>
             </div>
-            <h2 className="text-6xl md:text-8xl font-black text-consteel-dark tracking-tight">
+            <h2 className="text-6xl md:text-8xl font-black text-consteel-gold tracking-tight">
               consteel
             </h2>
           </div>
@@ -52,26 +52,26 @@ const FooterSection = () => {
           <div className={`transition-all duration-800 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <div className="w-32 h-1 bg-consteel-dark mx-auto mb-8" />
-            <p className="text-3xl md:text-4xl font-light text-consteel-dark/80 tracking-wide">
+            <div className="w-32 h-1 bg-consteel-gold mx-auto mb-8" />
+            <p className="text-3xl md:text-4xl font-light text-consteel-gray tracking-wide">
               Together We Rise
             </p>
           </div>
 
           {/* Decorative Elements */}
           <div className="mt-16 flex justify-center items-center gap-4">
-            <div className="w-24 h-px bg-consteel-dark/30" />
-            <div className="w-2 h-2 bg-consteel-dark rounded-full" />
-            <div className="w-24 h-px bg-consteel-dark/30" />
+            <div className="w-24 h-px bg-consteel-gold/30" />
+            <div className="w-2 h-2 bg-consteel-gold rounded-full" />
+            <div className="w-24 h-px bg-consteel-gold/30" />
           </div>
         </div>
       </div>
 
       {/* Floating Shapes */}
-      <div className="absolute top-10 left-10 w-20 h-20 border-2 border-consteel-dark/20 rounded-full animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-12 h-12 bg-consteel-dark/10 rounded-lg rotate-45" />
-      <div className="absolute top-1/3 right-10 w-8 h-8 border border-consteel-dark/30 rounded-full" />
-      <div className="absolute bottom-1/3 left-20 w-6 h-6 bg-consteel-dark/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-10 left-10 w-20 h-20 border-2 border-consteel-gold/20 rounded-full animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-12 h-12 bg-consteel-gold/10 rounded-lg rotate-45" />
+      <div className="absolute top-1/3 right-10 w-8 h-8 border border-consteel-gold/30 rounded-full" />
+      <div className="absolute bottom-1/3 left-20 w-6 h-6 bg-consteel-gold/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
     </section>
   );
 };

@@ -94,7 +94,7 @@ const ProjectsSection = () => {
   return (
     <section 
       id="projects-section"
-      className="bg-consteel-dark py-20 overflow-hidden"
+      className="bg-white py-20 overflow-hidden"
     >
       <div className="container mx-auto px-6">
         {/* Header */}
@@ -102,11 +102,11 @@ const ProjectsSection = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div>
-            <h2 className="text-5xl font-black text-foreground mb-4">
+            <h2 className="text-5xl font-black text-consteel-dark mb-4">
               Projetos
             </h2>
             <div className="w-16 h-1 bg-consteel-gold mb-6" />
-            <p className="text-xl text-consteel-light-gray max-w-2xl">
+            <p className="text-xl text-consteel-gray max-w-2xl">
               Uma seleção dos nossos projetos mais emblemáticos, demonstrando a nossa 
               capacidade de execução em diversos setores da indústria.
             </p>
@@ -116,15 +116,15 @@ const ProjectsSection = () => {
           <div className="hidden md:flex gap-4">
             <button
               onClick={scrollLeft}
-              className="w-12 h-12 bg-consteel-gray hover:bg-consteel-gold border border-border hover:border-consteel-gold rounded-full flex items-center justify-center transition-all duration-300 group"
+              className="w-12 h-12 bg-consteel-light-gray hover:bg-consteel-gold border border-consteel-gray hover:border-consteel-gold rounded-full flex items-center justify-center transition-all duration-300 group"
             >
-              <ChevronLeft className="w-5 h-5 text-consteel-light-gray group-hover:text-consteel-dark" />
+              <ChevronLeft className="w-5 h-5 text-consteel-dark group-hover:text-white" />
             </button>
             <button
               onClick={scrollRight}
-              className="w-12 h-12 bg-consteel-gray hover:bg-consteel-gold border border-border hover:border-consteel-gold rounded-full flex items-center justify-center transition-all duration-300 group"
+              className="w-12 h-12 bg-consteel-light-gray hover:bg-consteel-gold border border-consteel-gray hover:border-consteel-gold rounded-full flex items-center justify-center transition-all duration-300 group"
             >
-              <ChevronRight className="w-5 h-5 text-consteel-light-gray group-hover:text-consteel-dark" />
+              <ChevronRight className="w-5 h-5 text-consteel-dark group-hover:text-white" />
             </button>
           </div>
         </div>
@@ -158,12 +158,12 @@ const ProjectsSection = () => {
               </div>
 
               {/* Project Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2">
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-bold text-consteel-dark mb-3 line-clamp-2">
                   {project.title}
                 </h3>
                 
-                <div className="space-y-2 text-sm text-consteel-light-gray">
+                <div className="space-y-2 text-sm text-consteel-gray">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     <span>{project.year}</span>
@@ -179,7 +179,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Action Button */}
-                <div className="mt-6 pt-4 border-t border-border">
+                <div className="mt-6 pt-4 border-t border-consteel-light-gray">
                   <Link 
                     to={`/project/${project.id}`}
                     className="text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
