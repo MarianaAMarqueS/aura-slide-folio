@@ -4,6 +4,7 @@ import industrialHero from "@/assets/industrial-hero.jpg";
 const IndustrialHeroImage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [wordOpacity, setWordOpacity] = useState(1);
   
   const words = ["INOVAÇÃO", "SHAPE", "TECNOLOGIA"];
 
@@ -25,8 +26,16 @@ const IndustrialHeroImage = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2500);
+      // Fade out
+      setWordOpacity(0);
+      
+      // Change word after fade out
+      setTimeout(() => {
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        // Fade in
+        setWordOpacity(1);
+      }, 500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [words.length]);
@@ -75,7 +84,10 @@ const IndustrialHeroImage = () => {
         <div className={`text-center transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-6xl md:text-8xl font-black text-foreground mb-6 tracking-tight transition-all duration-500">
+          <h2 
+            className="text-6xl md:text-8xl font-black text-foreground mb-6 tracking-tight transition-opacity duration-500"
+            style={{ opacity: wordOpacity }}
+          >
             {words[currentWordIndex]}
           </h2>
           <div className="w-32 h-1 bg-consteel-gold mx-auto mb-8" />
