@@ -142,14 +142,6 @@ const ServicesSection = () => {
                 <p className="text-consteel-light-gray text-sm leading-relaxed">
                   {service.description}
                 </p>
-
-                {service.highlighted && (
-                  <div className="mt-4 pt-4 border-t border-consteel-gold/30">
-                    <span className="text-xs text-consteel-gold font-medium uppercase tracking-wide">
-                      Especialidade
-                    </span>
-                  </div>
-                )}
               </div>
             );
           })}

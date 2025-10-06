@@ -123,21 +123,6 @@ All colors MUST be HSL.
   /* Service Card Hover Effect */
   .service-card {
     @apply relative bg-consteel-darker border border-border rounded-xl p-6 transition-all duration-300 cursor-pointer overflow-hidden;
-    box-shadow: var(--shadow-card);
-  }
-
-  .service-card::before {
-    @apply absolute inset-2 opacity-0 transition-opacity duration-300 rounded-lg;
-    content: '';
-    background: var(--gradient-gold);
-    z-index: 0;
-    filter: blur(15px);
-    transform: scale(0.9);
-  }
-
-  .service-card:hover::before {
-    @apply opacity-25;
-    transform: scale(0.95);
   }
 
   .service-card:hover {
