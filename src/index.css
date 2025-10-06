@@ -132,24 +132,32 @@ All colors MUST be HSL.
 
   /* Project Card */
   .project-card {
-    @apply bg-consteel-darker rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0;
+    @apply bg-white rounded-xl overflow-hidden flex-shrink-0;
     border: 0.5px solid hsl(var(--consteel-gold));
     width: 320px;
+    transition: all 0.4s ease;
   }
 
   .project-card:hover {
     @apply transform scale-105;
-    box-shadow: var(--shadow-glow);
+    background: hsl(var(--consteel-gold));
+    box-shadow: 0 0 40px hsl(var(--consteel-gold) / 0.6), 0 20px 60px -12px hsl(var(--consteel-gold) / 0.4);
   }
 
-  .project-card:hover .project-overlay {
-    @apply bg-consteel-gold/80;
+  .project-card:hover .project-info-section {
+    @apply bg-transparent;
   }
 
   .project-card:hover .project-title,
   .project-card:hover .project-info,
-  .project-card:hover .project-link {
+  .project-card:hover .project-info span,
+  .project-card:hover .project-link,
+  .project-card:hover .project-info svg {
     @apply text-white;
+  }
+
+  .project-card:hover .project-border {
+    @apply border-white;
   }
 
   .project-card:hover .project-category {

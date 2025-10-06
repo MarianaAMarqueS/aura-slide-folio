@@ -151,38 +151,38 @@ const ProjectsSection = () => {
                 />
                 <div className="project-overlay absolute inset-0 bg-gradient-to-t from-consteel-darker/80 to-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 left-4 right-4 z-10">
-                  <span className="project-category bg-consteel-gold text-consteel-dark px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-300">
+                  <span className="project-category bg-consteel-gold text-consteel-dark px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300">
                     {project.category}
                   </span>
                 </div>
               </div>
 
               {/* Project Info */}
-              <div className="p-6 bg-white" style={{ borderTop: '0.5px solid hsl(var(--consteel-gold))' }}>
-                <h3 className="project-title text-xl font-bold text-consteel-gold mb-3 line-clamp-2 transition-colors duration-300">
+              <div className="project-info-section p-6 bg-white transition-all duration-300" style={{ borderTop: '0.5px solid hsl(var(--consteel-gold))' }}>
+                <h3 className="project-title text-xl font-bold text-consteel-gold mb-3 line-clamp-2 transition-all duration-300">
                   {project.title}
                 </h3>
                 
-                <div className="project-info space-y-2 text-sm text-consteel-gold transition-colors duration-300">
+                <div className="project-info space-y-2 text-sm text-consteel-gold transition-all duration-300">
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>{project.year}</span>
+                    <Calendar className="w-4 h-4 transition-all duration-300" />
+                    <span className="transition-all duration-300">{project.year}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    <span>{project.location}</span>
+                    <MapPin className="w-4 h-4 transition-all duration-300" />
+                    <span className="transition-all duration-300">{project.location}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    <span>{project.team}</span>
+                    <Users className="w-4 h-4 transition-all duration-300" />
+                    <span className="transition-all duration-300">{project.team}</span>
                   </div>
                 </div>
 
                 {/* Action Button */}
-                <div className="mt-6 pt-4 border-t border-consteel-gold">
+                <div className="mt-6 pt-4 project-border border-t border-consteel-gold transition-all duration-300">
                   <Link 
                     to={`/project/${project.id}`}
-                    className="project-link text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
+                    className="project-link text-consteel-gold font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2"
                   >
                     Ver Detalhes →
                   </Link>
