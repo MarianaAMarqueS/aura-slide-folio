@@ -76,7 +76,7 @@ const StatsSection = () => {
             >
               <div className="relative">
                 {/* Number */}
-                <div className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-2">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-thin text-black mb-2">
                   {animatedNumbers[index] !== undefined ? (
                     <>
                       {formatNumber(animatedNumbers[index], stat.number)}
@@ -95,7 +95,7 @@ const StatsSection = () => {
                 </div>
                 
                 {/* Label */}
-                <p className="text-sm md:text-base text-black font-medium leading-tight mt-2">
+                <p className="text-sm md:text-base text-black font-light leading-tight mt-2">
                   {stat.label}
                 </p>
 
