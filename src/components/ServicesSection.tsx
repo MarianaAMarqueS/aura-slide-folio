@@ -123,16 +123,11 @@ const ServicesSection = () => {
                 key={service.id}
                 className={`service-card transition-all duration-500 ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                } ${service.highlighted ? 'border-consteel-gold' : ''}`}
+                }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <Icon className={`w-8 h-8 ${
-                    service.highlighted ? 'text-consteel-gold' : 'text-consteel-light-gray'
-                  }`} />
-                  {service.highlighted && (
-                    <div className="w-2 h-2 bg-consteel-gold rounded-full animate-pulse" />
-                  )}
+                  <Icon className="w-8 h-8 text-consteel-light-gray" />
                 </div>
                 
                 <h3 className="text-lg font-bold text-foreground mb-2">
