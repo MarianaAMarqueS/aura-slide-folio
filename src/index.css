@@ -142,6 +142,20 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow);
   }
 
+  .project-card:hover .project-overlay {
+    @apply bg-consteel-gold/80;
+  }
+
+  .project-card:hover .project-title,
+  .project-card:hover .project-info,
+  .project-card:hover .project-link {
+    @apply text-white;
+  }
+
+  .project-card:hover .project-category {
+    @apply bg-white text-consteel-gold;
+  }
+
   /* Hero Letter Styling */
   .hero-letter {
     @apply text-consteel-darker font-black text-9xl leading-none;

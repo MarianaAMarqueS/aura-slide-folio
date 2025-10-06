@@ -149,9 +149,9 @@ const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-consteel-darker/80 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="bg-consteel-gold text-consteel-dark px-3 py-1 rounded-full text-xs font-semibold">
+                <div className="project-overlay absolute inset-0 bg-gradient-to-t from-consteel-darker/80 to-transparent transition-colors duration-300" />
+                <div className="absolute bottom-4 left-4 right-4 z-10">
+                  <span className="project-category bg-consteel-gold text-consteel-dark px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-300">
                     {project.category}
                   </span>
                 </div>
@@ -159,11 +159,11 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="p-6 bg-white" style={{ borderTop: '0.5px solid hsl(var(--consteel-gold))' }}>
-                <h3 className="text-xl font-bold text-consteel-gold mb-3 line-clamp-2">
+                <h3 className="project-title text-xl font-bold text-consteel-gold mb-3 line-clamp-2 transition-colors duration-300">
                   {project.title}
                 </h3>
                 
-                <div className="space-y-2 text-sm text-consteel-gold">
+                <div className="project-info space-y-2 text-sm text-consteel-gold transition-colors duration-300">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     <span>{project.year}</span>
@@ -182,7 +182,7 @@ const ProjectsSection = () => {
                 <div className="mt-6 pt-4 border-t border-consteel-gold">
                   <Link 
                     to={`/project/${project.id}`}
-                    className="text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
+                    className="project-link text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
                   >
                     Ver Detalhes →
                   </Link>
