@@ -147,14 +147,14 @@ All colors MUST be HSL.
 
   /* Project Card */
   .project-card {
-    @apply bg-consteel-darker border border-consteel-gold rounded-xl overflow-hidden transition-transform duration-300 flex-shrink-0;
-    box-shadow: var(--shadow-glow);
+    @apply bg-consteel-darker rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0;
+    border: 0.5px solid hsl(var(--consteel-gold));
     width: 320px;
   }
 
   .project-card:hover {
     @apply transform scale-105;
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow-glow);
   }
 
   /* Hero Letter Styling */

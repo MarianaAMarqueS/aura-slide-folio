@@ -158,7 +158,7 @@ const ProjectsSection = () => {
               </div>
 
               {/* Project Info */}
-              <div className="p-6 bg-white border border-consteel-gold">
+              <div className="p-6 bg-white" style={{ borderTop: '0.5px solid hsl(var(--consteel-gold))' }}>
                 <h3 className="text-xl font-bold text-consteel-gold mb-3 line-clamp-2">
                   {project.title}
                 </h3>
