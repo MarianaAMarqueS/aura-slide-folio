@@ -147,8 +147,8 @@ All colors MUST be HSL.
 
   /* Project Card */
   .project-card {
-    @apply bg-consteel-darker border border-border rounded-xl overflow-hidden transition-transform duration-300 flex-shrink-0;
-    box-shadow: var(--shadow-card);
+    @apply bg-consteel-darker border border-consteel-gold rounded-xl overflow-hidden transition-transform duration-300 flex-shrink-0;
+    box-shadow: var(--shadow-glow);
     width: 320px;
   }
 

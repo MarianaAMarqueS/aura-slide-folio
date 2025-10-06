@@ -158,12 +158,12 @@ const ProjectsSection = () => {
               </div>
 
               {/* Project Info */}
-              <div className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-consteel-dark mb-3 line-clamp-2">
+              <div className="p-6 bg-white border border-consteel-gold">
+                <h3 className="text-xl font-bold text-consteel-gold mb-3 line-clamp-2">
                   {project.title}
                 </h3>
                 
-                <div className="space-y-2 text-sm text-consteel-gray">
+                <div className="space-y-2 text-sm text-consteel-gold">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     <span>{project.year}</span>
@@ -179,7 +179,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Action Button */}
-                <div className="mt-6 pt-4 border-t border-consteel-light-gray">
+                <div className="mt-6 pt-4 border-t border-consteel-gold">
                   <Link 
                     to={`/project/${project.id}`}
                     className="text-consteel-gold hover:text-consteel-gold-glow font-semibold text-sm transition-colors duration-300"
