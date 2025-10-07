@@ -1,79 +1,79 @@
 import { useEffect, useState } from "react";
-import { Building2, Factory, Hammer, Shield, Zap, Wrench } from "lucide-react";
+import { Factory, Zap, Ship, Droplet, Building2, Flame, Wrench, Package, Apple, Wind, Car, Hammer } from "lucide-react";
 
 const services = [
   {
     id: 1,
-    title: "Estruturas Metálicas",
-    icon: Building2,
-    description: "Desenvolvimento e execução de estruturas metálicas complexas"
+    title: "Celulose",
+    icon: Factory,
+    description: "Soluções especializadas para a indústria de celulose e papel"
   },
   {
     id: 2,
-    title: "Soldadura Especializada", 
+    title: "Petroquímica", 
     icon: Zap,
-    description: "Técnicas avançadas de soldadura para projetos industriais",
+    description: "Estruturas e componentes para o setor petroquímico",
     highlighted: true
   },
   {
     id: 3,
-    title: "Carpintaria Metálica",
-    icon: Hammer,
-    description: "Soluções personalizadas em carpintaria metálica"
+    title: "Naval",
+    icon: Ship,
+    description: "Projetos e construção para a indústria naval"
   },
   {
     id: 4,
-    title: "Indústria Automóvel",
-    icon: Wrench,
-    description: "Componentes e estruturas para o setor automóvel"
+    title: "Hidroelétrica",
+    icon: Droplet,
+    description: "Equipamentos e estruturas para centrais hidroelétricas"
   },
   {
     id: 5,
-    title: "Construção Civil",
-    icon: Factory,
-    description: "Estruturas para construção civil e obras públicas"
+    title: "Cimenteira",
+    icon: Building2,
+    description: "Estruturas metálicas para a indústria cimenteira"
   },
   {
     id: 6,
-    title: "Serralharia",
-    icon: Shield,
-    description: "Trabalhos especializados em serralharia industrial"
+    title: "Siderúrgica",
+    icon: Flame,
+    description: "Componentes especializados para a indústria siderúrgica"
   },
   {
     id: 7,
-    title: "Manutenção Industrial",
+    title: "Metalomecânica",
     icon: Wrench,
-    description: "Serviços de manutenção e reparação industrial"
+    description: "Soluções completas em metalomecânica industrial"
   },
   {
     id: 8,
-    title: "Projetos Especiais",
-    icon: Zap,
-    description: "Desenvolvimento de projetos únicos e personalizados"
+    title: "Cerâmica",
+    icon: Package,
+    description: "Estruturas e equipamentos para a indústria cerâmica"
   },
   {
     id: 9,
-    title: "Consultoria Técnica",
-    icon: Building2,
-    description: "Assessoria técnica especializada em metalomecânica"
+    title: "Alimentar",
+    icon: Apple,
+    description: "Estruturas e equipamentos para a indústria alimentar"
   },
   {
     id: 10,
-    title: "Controlo de Qualidade",
-    icon: Shield,
-    description: "Rigorosos processos de controlo e certificação"
+    title: "Eólica",
+    icon: Wind,
+    description: "Componentes e estruturas para energia eólica"
   },
   {
     id: 11,
-    title: "Logística Industrial",
-    icon: Factory,
-    description: "Gestão completa de projetos industriais"
+    title: "Automóvel",
+    icon: Car,
+    description: "Componentes e estruturas para a indústria automóvel"
   },
   {
     id: 12,
-    title: "Inovação Tecnológica",
+    title: "Construção Civil",
     icon: Hammer,
-    description: "Implementação de novas tecnologias e processos"
+    description: "Estruturas metálicas para construção civil e obras públicas"
   }
 ];
 
