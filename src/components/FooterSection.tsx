@@ -1,78 +1,145 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Facebook, Linkedin, Instagram } from "lucide-react";
+import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+import consteelLogo from "@/assets/consteel-logo.png";
+
+const emailSchema = z.object({
+  email: z.string().trim().email({ message: "Email inválido" }).max(255, { message: "Email muito longo" })
+});
 
 const FooterSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const result = emailSchema.safeParse({ email });
+    
+    if (!result.success) {
+      toast({
+        title: "Erro",
+        description: result.error.errors[0].message,
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Aqui você pode adicionar a lógica para enviar o email
+    toast({
+      title: "Sucesso!",
+      description: "Subscrição realizada com sucesso."
+    });
+    setEmail("");
+  };
 
-    const element = document.getElementById('footer-section');
-    if (element) observer.observe(element);
+  const navigationLinks = [
+    { label: "Quem somos", href: "#about" },
+    { label: "Serviços", href: "#services" },
+    { label: "Projetos", href: "#projects" }
+  ];
 
-    return () => observer.disconnect();
-  }, []);
+  const legalLinks = [
+    { label: "Contatos", href: "#contact" },
+    { label: "Privacidade", href: "#privacy" },
+    { label: "Reclamações", href: "#complaints" }
+  ];
+
+  const handleLinkClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section 
-      id="footer-section"
-      className="relative bg-white py-12 overflow-hidden"
-    >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" 
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-6">
-        <div className={`text-center transition-all duration-800 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          {/* Large Logo */}
-          <div className="flex items-center justify-center gap-8 mb-8">
-            <div className="w-16 h-16 bg-consteel-gold rounded-2xl flex items-center justify-center">
-              <span className="text-consteel-dark text-3xl font-black">C</span>
+    <footer className="bg-consteel-darker py-12">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+          {/* Logo e Redes Sociais */}
+          <div className="flex flex-col gap-6">
+            <img 
+              src={consteelLogo}
+              alt="Consteel"
+              className="h-12 w-auto"
+            />
+            <div className="flex gap-4">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 border-2 border-white/20 rounded-full flex items-center justify-center hover:border-consteel-gold hover:bg-consteel-gold/10 transition-all duration-300"
+              >
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 border-2 border-white/20 rounded-full flex items-center justify-center hover:border-consteel-gold hover:bg-consteel-gold/10 transition-all duration-300"
+              >
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 border-2 border-white/20 rounded-full flex items-center justify-center hover:border-consteel-gold hover:bg-consteel-gold/10 transition-all duration-300"
+              >
+                <Instagram className="w-5 h-5 text-white" />
+              </a>
             </div>
-            <h2 className="text-6xl md:text-8xl font-black text-consteel-gold tracking-tight">
-              consteel
-            </h2>
           </div>
 
-          {/* Tagline */}
-          <div className={`transition-all duration-800 delay-300 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <div className="w-32 h-1 bg-consteel-gold mx-auto mb-8" />
-            <p className="text-3xl md:text-4xl font-light text-consteel-gray tracking-wide">
-              Together We Rise
-            </p>
+          {/* Links de Navegação */}
+          <div className="flex flex-col gap-3">
+            {navigationLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => handleLinkClick(link.href)}
+                className="text-white text-left hover:text-consteel-gold transition-colors duration-300"
+              >
+                {link.label}
+              </button>
+            ))}
           </div>
 
-          {/* Decorative Elements */}
-          <div className="mt-16 flex justify-center items-center gap-4">
-            <div className="w-24 h-px bg-consteel-gold/30" />
-            <div className="w-2 h-2 bg-consteel-gold rounded-full" />
-            <div className="w-24 h-px bg-consteel-gold/30" />
+          {/* Links Legais */}
+          <div className="flex flex-col gap-3">
+            {legalLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => handleLinkClick(link.href)}
+                className="text-white text-left hover:text-consteel-gold transition-colors duration-300"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Newsletter */}
+          <div className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="O seu email"
+                className="px-4 py-3 rounded-full bg-white text-consteel-darker placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-consteel-gold"
+                maxLength={255}
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-consteel-gold text-consteel-darker rounded-full font-semibold hover:bg-consteel-gold-glow transition-all duration-300"
+              >
+                Assinar Newsletter
+              </button>
+            </form>
           </div>
         </div>
       </div>
-
-      {/* Floating Shapes */}
-      <div className="absolute top-10 left-10 w-20 h-20 border-2 border-consteel-gold/20 rounded-full animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-12 h-12 bg-consteel-gold/10 rounded-lg rotate-45" />
-      <div className="absolute top-1/3 right-10 w-8 h-8 border border-consteel-gold/30 rounded-full" />
-      <div className="absolute bottom-1/3 left-20 w-6 h-6 bg-consteel-gold/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-    </section>
+    </footer>
   );
 };
 
