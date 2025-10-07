@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ceoImage from "@/assets/consteel-ceo.jpg";
+import ceoImage from "@/assets/hugo-bernardes-ceo.jpg";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +35,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-consteel-gold/20 to-transparent blur-2xl" />
               <img 
                 src={ceoImage}
-                alt="CEO da Consteel"
+                alt="Hugo Bernardes - CEO & Fundador da Consteel"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl relative z-10"
               />
             </div>
@@ -53,30 +53,24 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-consteel-light-gray leading-relaxed">
               <p className="text-lg">
-                <span className="text-consteel-gold font-semibold">José Santos e Cia Pereira - Sócio CONSTEEL.</span> 
-                {" "}Estabelecida com décadas de experiência no mercado português, a nossa empresa tem-se 
-                destacado pela qualidade e inovação em soluções de aço.
+                Localizada em Cantanhede, Portugal, a CONSTEEL – Metalomecânica e Serviços Lda, presta os mais variados serviços no ramo da metalomecânica por toda a Europa.
               </p>
 
               <p>
-                Com um compromisso inabalável com a excelência, desenvolvemos projetos que transformam 
-                ideias em estruturas sólidas e duradouras. A nossa experiência abrange desde pequenos 
-                projetos residenciais até grandes complexos industriais.
+                Fundada em 2017, após anos de experiência desenvolvida pelo CEO e fundador, Hugo Bernardes, surge no seguimento da necessidade do mercado atual em obter os melhores serviços na indústria metalomecânica, apresentando-se como uma alternativa de confiança e qualidade, usando as melhores soluções na indústria de forma a cumprir os objetivos dos nossos clientes com a melhor distinção possível.
               </p>
 
               <p>
-                Investimos continuamente em tecnologia de ponta e formação da nossa equipa, garantindo 
-                que cada projeto seja executado com os mais altos padrões de qualidade e segurança. 
-                A confiança dos nossos clientes é o alicerce do nosso sucesso.
+                Focamos o nosso campo de missão e visão, de forma a sermos uma ferramenta e solução à medida de cada cliente, tendo em mente a melhoria contínua, de modo que estes alcancem e mantenham os maiores padrões de qualidade.
               </p>
 
               <div className="flex items-center gap-4 pt-4">
                 <div className="w-12 h-12 bg-consteel-gold rounded-full flex items-center justify-center">
-                  <span className="text-consteel-dark font-bold text-xl">C</span>
+                  <span className="text-consteel-dark font-bold text-xl">HB</span>
                 </div>
                 <div>
-                  <p className="text-consteel-gold font-semibold">Consteel</p>
-                  <p className="text-sm text-consteel-light-gray">Construindo o futuro</p>
+                  <p className="text-consteel-gold font-semibold">Hugo Bernardes</p>
+                  <p className="text-sm text-consteel-light-gray">CEO & Fundador</p>
                 </div>
               </div>
             </div>
