@@ -62,7 +62,7 @@ const FooterSection = () => {
             <img 
               src={consteelLogo}
               alt="Consteel"
-              className="h-12 w-auto"
+              className="h-12 w-auto object-contain"
             />
             <div className="flex gap-4">
               <a 
