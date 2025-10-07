@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import consteelLogo from '@/assets/consteel-logo-c.jpg';
+import consteelLogo from '@/assets/consteel-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

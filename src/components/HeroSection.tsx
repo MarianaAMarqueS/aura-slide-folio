@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import consteelLogo from "@/assets/consteel-logo-c.jpg";
+import consteelLogo from "@/assets/consteel-logo.png";
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,6 +10,20 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen bg-hero-bg overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/melted-metal.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 h-full">
