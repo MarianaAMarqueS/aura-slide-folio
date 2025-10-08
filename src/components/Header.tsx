@@ -1,25 +1,24 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { X, Plus } from 'lucide-react';
 import consteelLogo from '@/assets/consteel-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navigationItems = [
-    { label: 'Quem Somos', href: '#about', number: '01' },
-    { label: 'Serviços e Indústrias', href: '#services', number: '02' },
-    { label: 'Projetos', href: '#projects', number: '03' },
-    { label: 'Notícias', href: '#news', number: '04' }
+    { label: 'Quem Somos', href: '#about', number: '01', type: 'scroll' },
+    { label: 'Serviços e Indústrias', href: '#services', number: '02', type: 'scroll' },
+    { label: 'Projetos', href: '/projetos', number: '03', type: 'route' },
+    { label: 'Notícias', href: '/noticias', number: '04', type: 'route' }
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, type: string) => {
     setIsMenuOpen(false);
     
-    if (href === '#news') {
-      const footer = document.querySelector('footer');
-      if (footer) {
-        footer.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (type === 'route') {
+      navigate(href);
     } else {
       const element = document.querySelector(href);
       if (element) {
@@ -33,13 +32,13 @@ const Header = () => {
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-consteel-darker/80 backdrop-blur-sm border-b border-consteel-gold/10">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src={consteelLogo} 
               alt="Consteel" 
               className="h-10 w-auto"
             />
-          </div>
+          </Link>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -89,7 +88,7 @@ const Header = () => {
             {navigationItems.map((item, index) => (
               <button
                 key={item.label}
-                onClick={() => handleNavClick(item.href)}
+                onClick={() => handleNavClick(item.href, item.type)}
                 className={`group flex items-baseline gap-6 w-full text-left transition-all duration-500 hover:translate-x-4 ${
                   isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
                 }`}
