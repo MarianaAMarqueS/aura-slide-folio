@@ -54,25 +54,29 @@ const Noticias = () => {
               <Link
                 key={news.id}
                 to={`/news/${news.id}`}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                className="news-card"
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img
                     src={news.image}
                     alt={news.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="text-xs text-gray-500 mb-2">{news.category}</div>
-                  <h3 className="text-xl font-bold text-black mb-2">{news.title}</h3>
-                  <div className="text-sm text-gray-600 mb-1">{news.date}</div>
-                  <div className="text-sm text-gray-600 mb-4">{news.description}</div>
-                  <div className="flex items-center text-[#F7B200] text-sm font-semibold">
-                    Ver detalhes
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                <div className="news-info-section p-6">
+                  <div className="news-category bg-[#F7B200] text-black px-3 py-1 rounded-full text-xs font-semibold inline-block mb-3 transition-all duration-300">
+                    {news.category}
+                  </div>
+                  <h3 className="news-title text-xl font-bold text-[#F7B200] mb-2">{news.title}</h3>
+                  <div className="news-info text-sm text-[#F7B200] mb-1">{news.date}</div>
+                  <div className="news-description text-sm text-[#F7B200] mb-4">{news.description}</div>
+                  <div className="news-border pt-4 border-t border-[#F7B200] transition-all duration-300">
+                    <div className="news-link flex items-center text-[#F7B200] text-sm font-semibold transition-all duration-300">
+                      Ver detalhes
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>

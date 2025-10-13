@@ -197,6 +197,38 @@ All colors MUST be HSL.
     overflow: hidden;
   }
 
+  /* News Card - Similar to Project Card */
+  .news-card {
+    @apply bg-white rounded-2xl overflow-hidden;
+    border: 2px solid #F7B200;
+    transition: all 0.4s ease;
+  }
+
+  .news-card:hover {
+    @apply transform scale-105;
+    background: #F7B200;
+    box-shadow: 0 0 40px rgba(247, 178, 0, 0.6), 0 20px 60px -12px rgba(247, 178, 0, 0.4);
+  }
+
+  .news-card:hover .news-info-section {
+    @apply bg-transparent;
+  }
+
+  .news-card:hover .news-title,
+  .news-card:hover .news-info,
+  .news-card:hover .news-description,
+  .news-card:hover .news-link {
+    @apply text-white;
+  }
+
+  .news-card:hover .news-border {
+    @apply border-white;
+  }
+
+  .news-card:hover .news-category {
+    @apply bg-white text-black;
+  }
+
   /* Scroll Animations */
   .animate-slide-up {
     animation: slideUp 0.6s ease-out forwards;
