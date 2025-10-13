@@ -1,11 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { X, Plus } from 'lucide-react';
 import consteelLogo from '@/assets/consteel-logo.png';
+import consteelLogoBlack from '@/assets/consteel-logo-black.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOnWhiteBackground, setIsOnWhiteBackground] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('about-section');
+      if (aboutSection) {
+        const rect = aboutSection.getBoundingClientRect();
+        const headerHeight = 80; // Approximate header height
+        
+        // Check if header is over the about section
+        const isOverAbout = rect.top <= headerHeight && rect.bottom >= headerHeight;
+        setIsOnWhiteBackground(isOverAbout);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigationItems = [
     { label: 'Quem Somos', href: '#about', number: '01', type: 'scroll' },
@@ -30,19 +51,27 @@ const Header = () => {
   return (
     <>
       {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-consteel-darker/80 backdrop-blur-sm border-b border-consteel-gold/10">
+      <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b transition-all duration-300 ${
+        isOnWhiteBackground 
+          ? 'bg-white/80 border-gray-200' 
+          : 'bg-consteel-darker/80 border-consteel-gold/10'
+      }`}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src={consteelLogo} 
+              src={isOnWhiteBackground ? consteelLogoBlack : consteelLogo}
               alt="Consteel" 
-              className="h-10 w-auto"
+              className="h-10 w-auto transition-opacity duration-300"
             />
           </Link>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 px-4 py-2 text-consteel-gold font-medium hover:text-white transition-colors duration-300"
+            className={`flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-300 ${
+              isOnWhiteBackground
+                ? 'text-consteel-gold hover:text-black'
+                : 'text-consteel-gold hover:text-white'
+            }`}
             aria-label="Toggle menu"
           >
             <span className="text-sm tracking-wider">MENU</span>

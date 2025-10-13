@@ -23,7 +23,7 @@ const AboutSection = () => {
   return (
     <section 
       id="about-section"
-      className="bg-consteel-dark py-20"
+      className="bg-white py-20"
     >
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -45,13 +45,13 @@ const AboutSection = () => {
           <div className={`transition-all duration-800 delay-300 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
           }`}>
-            <h2 className="text-5xl font-black text-foreground mb-6">
+            <h2 className="text-5xl font-black text-black mb-6">
               A Consteel
             </h2>
             
             <div className="w-16 h-1 bg-consteel-gold mb-8" />
 
-            <div className="space-y-6 text-consteel-light-gray leading-relaxed">
+            <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-lg">
                 Localizada em Cantanhede, Portugal, a CONSTEEL – Metalomecânica e Serviços Lda, presta os mais variados serviços no ramo da metalomecânica por toda a Europa.
               </p>
@@ -66,11 +66,11 @@ const AboutSection = () => {
 
               <div className="flex items-center gap-4 pt-4">
                 <div className="w-12 h-12 bg-consteel-gold rounded-full flex items-center justify-center">
-                  <span className="text-consteel-dark font-bold text-xl">HB</span>
+                  <span className="text-white font-bold text-xl">HB</span>
                 </div>
                 <div>
                   <p className="text-consteel-gold font-semibold">Hugo Bernardes</p>
-                  <p className="text-sm text-consteel-light-gray">CEO & Fundador</p>
+                  <p className="text-sm text-gray-600">CEO & Fundador</p>
                 </div>
               </div>
             </div>
